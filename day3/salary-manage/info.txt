@@ -1,0 +1,6 @@
+Alex 1000000
+Rain 80000
+Egon 50
+Yuan 30000
+Rain 200000
+cntsp 999
