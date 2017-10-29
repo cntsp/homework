@@ -12,8 +12,8 @@ select  * from staff_table where enroll_date like "2013"
 > * 查到的信息，打印后，最后面还要显示查到的条数
 > * 可创建新员工纪录，以phone做唯一键，staff_id需自增
 > * 可删除指定员工信息纪录，输入员工id，即可删除
-> * 可修改员工信息，语法如下:
-　　UPDATE staff_table SET dept="Market" where dept = "IT"
+> * 可修改员工信息，语法如下: <br>
+UPDATE staff_table SET dept="Market" where dept = "IT"
  
 ### 环境依赖
 > * Pycharm(python3.4)
