@@ -23,7 +23,7 @@ select  * from staff_table where enroll_date like "2013"
 > * sql.py : 主程序
 > * staff_table.txt : 员工信息文件
 
-### staff_table.txt该文件初始只有3条员工信息如下：
+staff_table.txt该文件初始只有3条员工信息如下：
 1,hushaohua,24,18339063130,it,2016-09-01
 2,cheche,25,18339063131,manager,2016-11-01
 3,cntsp,28,18339063132,clerk,2016-09-11
