@@ -5,9 +5,9 @@
  * My Blog: [https://cntsp.github.io](https://cntsp.github.io)
  
 ### 功能实现
-> * 可进行模糊查询，语法至少支持下面3种:
-select name,age from staff_table where age > 22
-select  * from staff_table where dept = "IT"
+> * 可进行模糊查询，语法至少支持下面3种: <br>
+select name,age from staff_table where age > 22 <br>
+select  * from staff_table where dept = "IT" <br>
 select  * from staff_table where enroll_date like "2013"
 > * 查到的信息，打印后，最后面还要显示查到的条数
 > * 可创建新员工纪录，以phone做唯一键，staff_id需自增
