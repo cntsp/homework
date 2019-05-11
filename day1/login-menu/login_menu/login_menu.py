@@ -1,46 +1,46 @@
 # -*- coding:utf-8 -*-
 # Author: CNTSP
 ####################################################
-# Ñ§Ô±ĞÅÏ¢£º8×é-ÌÆÊéÅà
-# µ¼Ê¦ĞÅÏ¢£ºsublimePython
+# å­¦å‘˜ä¿¡æ¯ï¼š8ç»„-å”ä¹¦åŸ¹
+# å¯¼å¸ˆä¿¡æ¯ï¼šsublimePython
 # QQ:1909873483
 # blog:https://cntsp.github.io./
 ###################################################
-import getpass       # µ¼ÈëgetpassÄ£¿é£¬Ê¹ÓÃ»§ÊäÈëµÄÃÜÂë²»¿É¼û
+import getpass       # å¯¼å…¥getpassæ¨¡å—ï¼Œä½¿ç”¨æˆ·è¾“å…¥çš„å¯†ç ä¸å¯è§
 username = input("username: ")
 list1 = []
-list2 = []    # ¶¨ÒåÁ½¸ö¿ÕÁĞ±í£¬·Ö±ğÓÃÓÚ´æ·Å´ÓÎÄ¼şµ¼³öµÄËø¶¨ÓÃ»§ÒÔ¼°ÓÃ»§ºÍÃÜÂë
-with open("lock_name","r",encoding="utf-8") as f1: # with asÓï·¨½«ËøÎÄ¼şµÄÓÃ»§µ¼Èëlist1ÁĞ±íÖĞ
+list2 = []    # å®šä¹‰ä¸¤ä¸ªç©ºåˆ—è¡¨ï¼Œåˆ†åˆ«ç”¨äºå­˜æ”¾ä»æ–‡ä»¶å¯¼å‡ºçš„é”å®šç”¨æˆ·ä»¥åŠç”¨æˆ·å’Œå¯†ç 
+with open("lock_name","r",encoding="utf-8") as f1: # with asè¯­æ³•å°†é”æ–‡ä»¶çš„ç”¨æˆ·å¯¼å…¥list1åˆ—è¡¨ä¸­
     for line in f1:
-        list1.append(line.strip("\n"))              # forÓï¾ä½áÊøºólist1 = ['tangshupei','hushaohua']
-if username in list1:                               # Èç¹ûusernameÊäÈëÎªtangshupei»òhushaohuaÊ±£¬½«Ëø¶¨¸ÃÓÃ»§,Í¬Ê±ÍË³ö³ÌĞò
+        list1.append(line.strip("\n"))              # forè¯­å¥ç»“æŸålist1 = ['tangshupei','hushaohua']
+if username in list1:                               # å¦‚æœusernameè¾“å…¥ä¸ºtangshupeiæˆ–hushaohuaæ—¶ï¼Œå°†é”å®šè¯¥ç”¨æˆ·,åŒæ—¶é€€å‡ºç¨‹åº
     print("your username has been locked!")
     exit()
-with open("name","r",encoding="utf-8") as f2:    # ½«nameÎÄ¼şÖĞµÄÓÃ»§ÃûºÍÃÜÂë×ª»»³ÉÁĞ±ílist2
+with open("name","r",encoding="utf-8") as f2:    # å°†nameæ–‡ä»¶ä¸­çš„ç”¨æˆ·åå’Œå¯†ç è½¬æ¢æˆåˆ—è¡¨list2
     for line in f2:
-        list2.append(line.strip("\n")) # forÑ­»·½áÊøºólist2 = ['tangshupei 111', 'hushaohua  222', 'wangning   333', 'lushujie   444']
+        list2.append(line.strip("\n")) # forå¾ªç¯ç»“æŸålist2 = ['tangshupei 111', 'hushaohua  222', 'wangning   333', 'lushujie   444']
     n = len(list2)                    # n = 4
-    count = 0                   # countÓÃÀ´¼ÇÂ¼ÃÜÂë´íÎóµÄ´ÎÊı
+    count = 0                   # countç”¨æ¥è®°å½•å¯†ç é”™è¯¯çš„æ¬¡æ•°
 while True:
-    for line in range(n):     # ¿ªÊ¼ÓÃ»§Ãû²âÊÔµÄforÑ­»·£¬Ö±µ½ÊäÈëÕıÈ·µÄÓÃ»§Ãû
+    for line in range(n):     # å¼€å§‹ç”¨æˆ·åæµ‹è¯•çš„forå¾ªç¯ï¼Œç›´åˆ°è¾“å…¥æ­£ç¡®çš„ç”¨æˆ·å
             m = list2[line]
             s = m.split()
             user = s[0]
             passwd = s[1]
-            if username == user:             # ÊäÈëÕıÈ·µÄÓÃ»§Ãû
-                while True:                    # ¿ªÊ¼ÃÜÂëÊäÈëµÄÑ­»·
-                    password = input("password:")    # Pycharm ÏÂpassword = getpass.getpass(pwd="password:")²»ÄÜÕı³£Êä³ö
+            if username == user:             # è¾“å…¥æ­£ç¡®çš„ç”¨æˆ·å
+                while True:                    # å¼€å§‹å¯†ç è¾“å…¥çš„å¾ªç¯
+                    password = input("password:")    # Pycharm ä¸‹password = getpass.getpass("password:")ä¸èƒ½æ­£å¸¸è¾“å‡º
                     if password == passwd:  #
                         print("%s,welcome coming the python world" % username.capitalize())
                         exit()
-                    else:                            # ÃÜÂë´íÎó£¬ÔÙ´Î³¢ÊÔ
+                    else:                            # å¯†ç é”™è¯¯ï¼Œå†æ¬¡å°è¯•
                          print("password is error,please try again!")
-                         count += 1            # ¼ÇÂ¼´íÎó´ÎÊı
-                         if count >2:                # µ±ÃÜÂëÊäÈë3´Î´íÎóºó£¬°Ñ¸ÃÓÃ»§ÃûÌí¼Óµ½Ëø¶¨ÎÄ¼ş£¬Í¬Ê±ÍË³ö³ÌĞò
+                         count += 1            # è®°å½•é”™è¯¯æ¬¡æ•°
+                         if count >2:                # å½“å¯†ç è¾“å…¥3æ¬¡é”™è¯¯åï¼ŒæŠŠè¯¥ç”¨æˆ·åæ·»åŠ åˆ°é”å®šæ–‡ä»¶ï¼ŒåŒæ—¶é€€å‡ºç¨‹åº
                              print("password has more than three times,and your username has locked!")
                              with open("lock_name", "a", encoding="utf-8") as f2:
                                  f2.write(username + "\n")
                              exit()
-    if not count:     # ÅĞ¶Ï¸ÃÓÃ»§ÊÇ·ñ´æÔÚ£¬countÎª0Ê±£¬¸ÃÓÃ»§²»´æÔÚ,½áÊø³ÌĞò
+    if not count:     # åˆ¤æ–­è¯¥ç”¨æˆ·æ˜¯å¦å­˜åœ¨ï¼Œcountä¸º0æ—¶ï¼Œè¯¥ç”¨æˆ·ä¸å­˜åœ¨,ç»“æŸç¨‹åº
         print("Sorry,%s not exist!" % username)
         break
