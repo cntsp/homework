@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # IDEA
-.idea/workspace.xml
+.idea/*
 venv/
 
 # C extensions
