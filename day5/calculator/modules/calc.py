@@ -2,7 +2,7 @@ __Author__ = "CNTSP"
 
 import re
 
-def _del(f_list,f_index):
+def delete(f_list,f_index):
     """
     删除列表元素
     :param f_list: 输入列表
@@ -58,7 +58,7 @@ def multiply(mult1,mult2):
     result = float(mult1) * float(mult2)
     return str(result)
 
-def calc(f_list):
+def calculation(f_list):
     """
     计算分解后的表达式
     :param f_list: 输入列表
@@ -69,19 +69,19 @@ def calc(f_list):
     while not flag:
         if f_list.count('/'):
             f_index = f_list.index('/')
-            divide_result = divide(f_list[f_index-1],f_list[f_index+1])
-            f_list = _del(f_list,f_index)
-            f_list.insert(f_index-1,str(divide_result))
+            divide_result = divide(f_list[f_index-1], f_list[f_index+1])
+            f_list = delete(f_list, f_index)
+            f_list.insert(f_index-1, str(divide_result))
         elif f_list.count('*'):
             f_index = f_list.index('*')
-            multiply_result = multiply(f_list[f_index-1],f_list[f_index+1])
-            f_list = _del(f_list,f_index)
-            f_list.insert(f_index-1,str(multiply_result))
+            multiply_result = multiply(f_list[f_index-1], f_list[f_index+1])
+            f_list = delete(f_list, f_index)
+            f_list.insert(f_index-1, str(multiply_result))
         elif f_list.count('-'):
             f_index = f_list.index('-')
-            minus_result = minus(f_list[f_index-1],f_list[f_index+1])
-            f_list = _del(f_list,f_index)
-            f_list.insert(f_index-1,str(minus_result))
+            minus_result = minus(f_list[f_index-1], f_list[f_index+1])
+            f_list = delete(f_list, f_index)
+            f_list.insert(f_index-1, str(minus_result))
         else:
             if f_list.count('+'):
                 f_index = f_list.index('+')
@@ -121,17 +121,21 @@ def core(formula):
     :return:
     """
     # re.search(pattern,string,flags=0) 匹配到返回一个_sre.SRE_Match对象，匹配不到返回None
+    # r'\([^()]+)\' 对这个匹配 pattern 理解：匹配无嵌套小括号的小括号，并且返回第一个匹配到的对象
     if re.search(r'\([^()]+\)', formula):
-        # match.group(0) match是re.search(r'\([^()]+\)',formula)返回的match object,组0表示整个匹配到字串
-        brackets_cacl = re.search(r'\([^()]+\)',formula).group(0)
-        print("brackets_cacl is %s " %brackets_cacl)
 
-        result = calc(formula_to_list(brackets_cacl))
-        # re.sub(pattern,repl,string,count,flags)
-        formula = re.sub(r'\([^()]+\)',result,formula,1) # 1表示替换第一个匹配到的字串
+        # match.group(0) match是re.search(r'\([^()]+\)',formula)返回的match object,组0表示整个匹配到字串
+        # braces_contents: 第一次匹配到的小括号表达式内容
+
+        braces_contents = re.search(r'\([^()]+\)', formula).group(0)
+        print("braces_contents is %s " % braces_contents)
+
+        result = calculation(formula_to_list(braces_contents))
+        # sub(pattern, repl, string, count=0, flags=0)
+        formula = re.sub(r'\([^()]+\)', result, formula, count=1) # 1表示替换第一个匹配到的字串
         return core(formula)
     else:
-        return calc(formula_to_list(formula))
+        return calculation(formula_to_list(formula))
 
 
 

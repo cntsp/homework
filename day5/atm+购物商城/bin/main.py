@@ -1,4 +1,4 @@
-__Author__ = "CNTSP"
+    __Author__ = "CNTSP"
 
 import os
 import sys
