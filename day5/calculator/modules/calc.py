@@ -133,8 +133,10 @@ def core(formula):
         result = calculation(formula_to_list(braces_contents))
         # sub(pattern, repl, string, count=0, flags=0)
         formula = re.sub(r'\([^()]+\)', result, formula, count=1) # 1表示替换第一个匹配到的字串
+        print("每次去掉小括号后的表达式：", formula)
         return core(formula)
     else:
+        # 直到匹配不到小括号为止，开始执行下面的 return 语句
         return calculation(formula_to_list(formula))
 
 
