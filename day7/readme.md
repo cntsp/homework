@@ -84,5 +84,6 @@
 
 ```
 #### 初始化用户信息
-用户1：username: cntsp password: nihaoma 磁盘配额：100M
-用户2：username: xiaojie password: nihaoma 磁盘配额：50M
+> 用户1：username: cntsp password: nihaoma 磁盘配额：100M
+> 
+> 用户2：username: xiaojie password: nihaoma 磁盘配额：50M
