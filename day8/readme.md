@@ -15,6 +15,8 @@
 *   批量命令需使用 multiprocessing 并发
 
 补充说明：
+1. 执行scp命令，需要主控机和各个节点做免密登录
+2. 批量执行命令和批量上传文件命令参考如下：
 ```shell
     批量执行shell 命令时，举例如下：
     batch_run -h web1 -cmd "df -h"
